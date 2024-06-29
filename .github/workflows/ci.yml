@@ -9,10 +9,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Set up JDK 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
           java-version: '17'
+          cache: 'maven'
+          gpg-private-key: ${{ secrets.829ECD0061403B0D0B4CD8C50643B1AE7D122416 }} # Value of the GPG private key to import
+          gpg-passphrase: secret # env variable for GPG private key passphrase
       - name: Maven
         run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip
       - name: Compile the project
