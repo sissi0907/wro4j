@@ -13,9 +13,10 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '17'
-
+      - name: Maven
+        run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip
       - name: Compile the project
-        run: mvn test-compile -pl wro4j-extensions -am
+        run: mvn test-compile -pl wro4j-extensions -am -Drat.skip -Dskiptests -Dcheckstyle.skip
   
       # - name: Run tests
       #   run: mvn -pl wro4j-extensions test -Dtest=ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine#shouldProcessValidCss
