@@ -595,8 +595,8 @@
 							<goal>sign</goal>
 						</goals>
 						<configuration>
-							<keyname>829ECD0061403B0D0B4CD8C50643B1AE7D122416</keyname>
-							<passphrase>secret</passphrase>
+							<gpg.keyname>829ECD0061403B0D0B4CD8C50643B1AE7D122416</gpg.keyname>
+							<gpg.passphrase>secret</gpg.passphrase>
 						</configuration>
 					</execution>
 				</executions>
