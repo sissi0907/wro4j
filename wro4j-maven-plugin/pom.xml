@@ -83,6 +83,24 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-gpg-plugin</artifactId>
+			  <version>1.6</version>
+			  <executions>
+			    <execution>
+			      <id>sign-artifacts</id>
+			      <phase>verify</phase>
+			      <goals>
+			        <goal>sign</goal>
+			      </goals>
+			      <configuration>
+			        <keyname>829ECD0061403B0D0B4CD8C50643B1AE7D122416</keyname>
+			        <passphrase>secret</passphrase>
+			      </configuration>
+			    </execution>
+			  </executions>
+			</plugin>
 		</plugins>
 	</build>
 
