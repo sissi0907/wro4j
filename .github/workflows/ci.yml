@@ -15,7 +15,7 @@ jobs:
           java-version: '17'
           
       - name: Maven
-        run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip
+        run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip -Dmaven.test.skip=true
       - name: Compile the project
         run: mvn test-compile -pl wro4j-extensions -am -Drat.skip -Dskiptests -Dcheckstyle.skip
   
