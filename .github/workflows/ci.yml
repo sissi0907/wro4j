@@ -6,12 +6,6 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: crazy-max/ghaction-import-gpg@v5
-        with:
-          gpg_private_key: ${{ 28D9221A374EF005CA1D522C157E820CE16C7BD4 }}  
-          passphrase: ${{ secret }}
-      - name: sign in
-        run: gpg --default-key 452219EE23B2DF5DCBB800EE9842FCB5CB1CFA49 --sign pom.xml
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Set up JDK 17
