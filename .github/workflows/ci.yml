@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_key_file: ${{ secrets.GPG_KEY_FILE }}  
+          gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: sign in
         run: gpg --default-key 452219EE23B2DF5DCBB800EE9842FCB5CB1CFA49 --sign pom.xml
       - name: Checkout repository
