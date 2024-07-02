@@ -28,7 +28,7 @@ jobs:
         #   GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
         #   GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Compile the project
-        run: mvn test-compile -pl wro4j-extensions -am -Drat.skip -Dskiptests -Dcheckstyle.skip
+        run: mvn test-compile -pl wro4j-extensions -am -Drat.skip -Dskiptests -Dcheckstyle.skip -U
   
       # - name: Run tests
       #   run: mvn -pl wro4j-extensions test -Dtest=ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine#shouldProcessValidCss
@@ -40,4 +40,4 @@ jobs:
       #     java-version: '8'
   
       - name: Run NonDex to check for flaky tests
-        run: mvn -pl wro4j-extensions edu.illinois:nondex-maven-plugin:2.1.7:nondex -Dtest=ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine#shouldProcessValidCss -DnondexRuns=20
+        run: mvn -pl wro4j-extensions edu.illinois:nondex-maven-plugin:2.1.7:nondex -Dtest=ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine#shouldProcessValidCss -DnondexRuns=20 -U
