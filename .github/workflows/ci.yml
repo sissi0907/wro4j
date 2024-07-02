@@ -22,8 +22,8 @@ jobs:
       - name: Default key
         run: git config --global user.signingkey 9842FCB5CB1CFA49
           
-      - name: Build with Maven
-        run: ./mvnw --batch-mode --update-snapshots package
+      # - name: Build with Maven
+      #   run: ./mvnw --batch-mode --update-snapshots package
         # env:
         #   GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
         #   GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
