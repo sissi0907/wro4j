@@ -23,6 +23,9 @@ jobs:
           
       - name: Maven
         run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip -Dmaven.test.skip=true
+        env:
+          GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Compile the project
         run: mvn test-compile -pl wro4j-extensions -am -Drat.skip -Dskiptests -Dcheckstyle.skip
   
